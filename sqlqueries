@@ -1,0 +1,17 @@
+--Q.1 Retrieve the title, category ,of all movies
+select title,category from movies
+--Q.2 Find the details (title,category , etc.) of a specific movie of your choice.
+SELECT *FROM movies WHERE title = 'keith';
+--Q.3 List the top 10 movies based on their ratings.
+select  top 10 title,star_rating from movies order by star_rating desc 
+--Q.4 Find all movies of crime category
+select * from movies where category=  'crime'
+--Q.5 Count the number of movies in each genre
+select category,count(category) from movies group by category
+--Q.6 Calculate the average rating of all movies
+select avg(star_rating) as avg_movie_rate from movies
+---Q.7 Find movies with arating above 9.0.
+select * from movies where star_rating<9
+--Q.8Find the title and duration of the longest movie.
+select title ,duration from movies where duration=(select max(duration) from movies)
+
